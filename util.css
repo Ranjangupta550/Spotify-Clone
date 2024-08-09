@@ -1,0 +1,53 @@
+.Cflex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bg-black{
+    background-color: black;
+    color: white;
+}
+.svg-filter{
+    filter: invert(1);
+}
+.bg-gray{
+    background-color: #121212;
+}
+.rounded{
+    border-radius: 7px;
+}
+.m-1{
+    margin: 5px;
+}
+.m-2{
+    margin-top: 8px;
+}
+.flex{
+    display: flex;
+}
+.justify-contenct{
+    justify-content: center;
+}
+.align-item{
+    align-items: center;
+}
+/* .border{
+    border: 2px solid red;
+    margin: 3px;
+} */
+.svg{
+    color:black ;
+}
+.p-1{
+    padding: 16px 20px;
+}
+.f-weight-400{
+    font-weight: 400;
+}
+.f-weight-700{
+    font-weight: 700;
+}
+.f-opicity{
+    opacity: 0.6;
+}
+
