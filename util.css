@@ -50,4 +50,32 @@
 .f-opicity{
     opacity: 0.6;
 }
+.f-size-12{
+    font-size: 12px;
+    
+}
+.f-size-14
+{
+    font-size: 14px;
+}
+.cursor{
+    cursor: pointer;
+}
 
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scroll bar */
+}
+
+::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Background color of the scroll track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555; /* Color of the scroll thumb */
+    border-radius: 10px; /* Round the edges of the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #888; /* Color of the scroll thumb on hover */
+}

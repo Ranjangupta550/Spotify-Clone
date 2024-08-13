@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="util.css" />
-    <script type="module" src="app.js"></script>
+    <!-- <script type="module" src="script.js"></script> -->
     <title>Spotify</title>
   </head>
   <body>
@@ -40,6 +41,11 @@
             <img class="svg-filter" src="svg/library.svg" alt="Library" />
             <h2>Your Library</h2>
           </div>
+          <div class="songUl rounded">
+            <ul>
+              
+            </ul>
+          </div>
           <div class="footer flex">
             <div>
               <a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a>
@@ -72,27 +78,59 @@
           </div>
         </div>
       </div>
+
       <div class="right rounded bg-gray">
-        <div class="header flex   ">
-            <div class="nav flex">
-                <div class="f-opicity">
-                    <img class="svg-filter" src="svg/leftArrow.svg"  alt="">
-
-                </div>
-                <div class="f-opicity">
-
-                    <img class="svg-filter" src="svg/rightArrow.svg" alt="">
-                </div>
-               
+        <div class="header flex">
+          <div class="nav flex">
+            <div class="f-opicity">
+              <img class="svg-filter" src="svg/leftArrow.svg" alt="" />
             </div>
-            <div class="button">
-                <button class="sign-bt f-weight-700">
-                    Sign up
-                </button>
-                <button class="login-bt f-weight-700 ">
-                    Log in
-                </button>
+            <div class="f-opicity">
+              <img class="svg-filter" src="svg/rightArrow.svg" alt="" />
             </div>
+          </div>
+          <div class="button">
+            <button class="sign-bt">Sign up</button>
+            <button class="login-bt">Log in</button>
+          </div>
+        </div>
+        <div class="spotifyContainer flex">
+          <h1>Playlist Song</h1>
+          <div class="cardcontainer flex">
+            <div class="card rounded cursor">
+              <button class="svg-button">
+                <svg
+                  class="play-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 384 512"
+                >
+                  <path
+                    fill="#000000"
+                    d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+                  />
+                </svg>
+              </button>
+
+              <img
+                class="rounded"
+                src="https://i.scdn.co/image/ab67616d00001e021e63de6489803c2b39e7f8e5"
+                alt=""
+              />
+              <div class="h3 f-size-14 f-weight-700">Aashiqui 2</div>
+              <div class="p f-size-12">Mithoon Ankit Tiwari Jeet Gannguli</div>
+            </div>
+          </div>
+        </div>
+        <div class="songBar">
+
+          <div class="songButtons">
+            <img class="prevPlayButton" src="svg/prevSongButton.svg" alt="" />
+            <img class="playPauseButton" src="svg/songPlayButton.svg" alt="" />
+            <img class="playNextButton" src="svg/nextPlayButton.svg" alt="" />
+          </div>
+          <div class="seekbar">
+              <div class="circle"></div>
+          </div>
         </div>
       </div>
     </div>
