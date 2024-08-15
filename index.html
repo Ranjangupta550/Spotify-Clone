@@ -12,9 +12,16 @@
   <body>
     <div class="container flex bg-black">
       <div class="left border">
+      
         <div class="home bg-gray rounded m-1 p-1">
           <div class="logo svg-filter">
             <img src="svg/logo.svg" alt="" />
+            <div class="cross svg-filter">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" color="#ffffff" fill="none">
+                <path d="M18 6L12 12M12 12L6 18M12 12L18 18M12 12L6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            </div>
+            
           </div>
           <ul class="f-weight-700 f-opicity">
             <li class="flex">
@@ -81,12 +88,15 @@
 
       <div class="right rounded bg-gray">
         <div class="header flex">
-          <div class="nav flex">
-            <div class="f-opicity">
-              <img class="svg-filter" src="svg/leftArrow.svg" alt="" />
-            </div>
-            <div class="f-opicity">
-              <img class="svg-filter" src="svg/rightArrow.svg" alt="" />
+          <div class="hamburgercontainer">
+            <img class="hamburger" src="svg/hamburger.svg" alt="">
+            <div class="nav flex">
+              <div class="f-opicity">
+                <img class="svg-filter" src="svg/leftArrow.svg" alt="" />
+              </div>
+              <div class="f-opicity">
+                <img class="svg-filter" src="svg/rightArrow.svg" alt="" />
+              </div>
             </div>
           </div>
           <div class="button">
@@ -122,12 +132,20 @@
           </div>
         </div>
         <div class="songBar">
+          <div class="aboveSongbar">
+            <div class="playing-song-name">
 
-          <div class="songButtons">
-            <img class="prevPlayButton" src="svg/prevSongButton.svg" alt="" />
-            <img class="playPauseButton" src="svg/songPlayButton.svg" alt="" />
-            <img class="playNextButton" src="svg/nextPlayButton.svg" alt="" />
+            </div>
+  
+            <div class="songButtons">
+              <img id="prevPlayButton" src="svg/prevSongButton.svg" alt="" />
+              <img id="playPauseButton" src="svg/songPlayButton.svg" alt="" />
+              <img id="playNextButton" src="svg/nextPlayButton.svg" alt="" />
+            </div>
+            <div class="playing-song-time"></div>
+
           </div>
+          
           <div class="seekbar">
               <div class="circle"></div>
           </div>
