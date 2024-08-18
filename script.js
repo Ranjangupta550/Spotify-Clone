@@ -1,4 +1,5 @@
 let currentSong = new Audio();
+let list;
 //time converter seconds to seconds minutes
 function formatTime(seconds) {
   const roundedSeconds = Math.floor(seconds);
@@ -49,7 +50,7 @@ const playTrack = (track) => {
   // document.querySelector(".playing-song-time").innerHTML="00:00/00:00";
 };
 async function song() {
-  let list = await getSong();
+   list = await getSong();
   let songUl = document.querySelector(".songUl").getElementsByTagName("ul")[0];
 
   for (const song of list) {
@@ -94,39 +95,58 @@ async function song() {
     }
   });
 
+  
+
   currentSong.addEventListener("timeupdate", () => {
-    console.log(
-      formatTime(currentSong.currentTime),
-      formatTime(currentSong.duration)
-    );
     document.querySelector(".playing-song-time").innerHTML = `${formatTime(
       currentSong.currentTime
     )}/${formatTime(currentSong.duration)}`;
     document.querySelector(".circle").style.left =
       (currentSong.currentTime / currentSong.duration) * 100 + "%";
-      if(currentSong.currentTime==currentSong.duration){
-        playPauseButton.src="svg/songPlayButton.svg";
-
-      }
+    if (currentSong.currentTime == currentSong.duration) {
+      playPauseButton.src = "svg/songPlayButton.svg";
+    }
   });
 
-
   //seekbar event listner
-  document.querySelector(".seekbar").addEventListener("click",(e)=>{
-    console.log(e.offsetX,e.target.getBoundingClientRect().width);
-    let percent=(e.offsetX/e.target.getBoundingClientRect().width)*100;
-    document.querySelector(".circle").style.left= percent+"%";
-    currentSong.currentTime=(((currentSong.duration)*percent)/100)
-  })
+  document.querySelector(".seekbar").addEventListener("click", (e) => {
+    // console.log(e.offsetX, e.target.getBoundingClientRect().width);
+    let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+    document.querySelector(".circle").style.left = percent + "%";
+    currentSong.currentTime = (currentSong.duration * percent) / 100;
+  });
 
   //toggle hamburger
-  document.querySelector(".hamburger").addEventListener("click",()=>{
-    document.querySelector(".left").style.left=0;
+  document.querySelector(".hamburger").addEventListener("click", () => {
+    document.querySelector(".left").style.left = 0;
+  });
+
+  //toggle cross
+  document.querySelector(".cross").addEventListener("click", () => {
+    document.querySelector(".left").style.left = "-100%";
+  });
+  prevPlayButton.addEventListener("click", () => {
+        let index=list.indexOf(currentSong.src.split("/").slice(-1)[0]);
+      
+        if((index-1)>=0){
+        playTrack(list[index-1]);
+
+        }
+        
+  });
+  playNextButton.addEventListener("click",()=>{
+    let index=list.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    
+    if((index+1) <list.length){
+        playTrack(list[index+1])
+        
+    }
   })
 
-  //toggle cross 
-  document.querySelector(".cross").addEventListener("click",()=>{
-    document.querySelector(".left").style.left="-100%";
-  })
+  //volume
+  document.querySelector("#volume").addEventListener("change", (e) => {
+    console.log(currentSong.volume, e.target.value/100, e.target);
+    currentSong.volume=e.target.value/100;
+  });
 }
 song();
