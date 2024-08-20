@@ -221,9 +221,9 @@ body {
   height: 42px;
   width: 42px;
   position: absolute;
-  top: 100px;
+  top: 120px;
   left: 100px;
-  opacity: 1;
+  opacity: 0;
   background-color: #3be477;
   border-radius: 50%;
   border: none;
@@ -231,8 +231,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0;
+  transition: .25s ease-in-out all;
+  
 }
-
+.card:hover .svg-button{
+  top: 100px;
+  left: 100px;
+  opacity: 1;
+}
 .play-icon {
   height: 19px;
   width: 19px;
